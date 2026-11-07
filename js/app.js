@@ -4,6 +4,26 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // --- 0. IMMEDIATE PRELOADER DISMISSAL ENGINE ---
+  const loader = document.getElementById('intro-loader');
+  const dismissLoader = () => {
+    if (loader) {
+      loader.classList.add('fade-out');
+      setTimeout(() => {
+        if (loader && loader.style) {
+          loader.style.display = 'none';
+        }
+      }, 700);
+    }
+  };
+
+  if (loader) {
+    // Normal auto dismiss after 1.4 seconds
+    setTimeout(dismissLoader, 1400);
+    // Instant dismiss on click or touch
+    loader.addEventListener('click', dismissLoader);
+  }
+
   // --- 1. STATE & STORAGE MANAGEMENT ---
   const state = {
     theme: localStorage.getItem('kb_theme') || 'dark',
@@ -419,6 +439,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // --- 3.5 SAFE CALCULATOR ENGINE ---
+  function updateCalculator() {
+    const priceSlider = document.getElementById('calc-price-slider');
+    const downSlider = document.getElementById('calc-down-slider');
+    if (!priceSlider || !downSlider) return;
+
+    const priceBadge = document.getElementById('calc-price-val');
+    const downBadge = document.getElementById('calc-down-val');
+    const resDown = document.getElementById('calc-res-down');
+    const resMonthly = document.getElementById('calc-res-monthly');
+    const resRoi = document.getElementById('calc-res-roi');
+
+    const price = parseInt(priceSlider.value, 10) || 350000;
+    const downPercent = parseInt(downSlider.value, 10) || 20;
+    const isAr = state.lang === 'ar';
+    const currency = isAr ? 'ريال' : 'SAR';
+
+    if (priceBadge) priceBadge.textContent = `${price.toLocaleString()} ${currency}`;
+    if (downBadge) downBadge.textContent = `${downPercent}%`;
+
+    const downPaymentAmount = Math.round(price * (downPercent / 100));
+    const remainingAmount = price - downPaymentAmount;
+    const monthlyInstallment = Math.round(remainingAmount / 36);
+    const estimatedAnnualReturn = Math.round(price * 0.095);
+
+    if (resDown) resDown.textContent = `${downPaymentAmount.toLocaleString()} ${currency}`;
+    if (resMonthly) resMonthly.textContent = `${monthlyInstallment.toLocaleString()} ${currency} / ${isAr ? 'شهرياً' : 'mo'}`;
+    if (resRoi) resRoi.textContent = `${estimatedAnnualReturn.toLocaleString()} ${currency} (${isAr ? 'عائد 9.5% سنوي' : '9.5% ROI'})`;
+  }
+
   // --- 4. LANGUAGE TOGGLE (AR / EN) ---
   const applyLanguage = (lang) => {
     document.documentElement.setAttribute('lang', lang);
@@ -474,14 +524,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial Theme & Lang execution
   applyTheme(state.theme);
   applyLanguage(state.lang);
-
-  // --- 5. INTRO PRELOADER REMOVAL ---
-  const loader = document.getElementById('intro-loader');
-  if (loader) {
-    setTimeout(() => {
-      loader.classList.add('fade-out');
-    }, 1500);
-  }
 
   // --- 6. SCROLL PROGRESS BAR & NAVBAR SHADOW ---
   const progressBar = document.getElementById('scroll-progress');
@@ -738,39 +780,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // --- 13. INVESTMENT CALCULATOR ---
+  // --- 13. INVESTMENT CALCULATOR EVENT LISTENERS ---
   const priceSlider = document.getElementById('calc-price-slider');
   const downSlider = document.getElementById('calc-down-slider');
-  const priceBadge = document.getElementById('calc-price-val');
-  const downBadge = document.getElementById('calc-down-val');
-
-  const resDown = document.getElementById('calc-res-down');
-  const resMonthly = document.getElementById('calc-res-monthly');
-  const resRoi = document.getElementById('calc-res-roi');
-
-  function updateCalculator() {
-    if (!priceSlider || !downSlider) return;
-
-    const price = parseInt(priceSlider.value, 10);
-    const downPercent = parseInt(downSlider.value, 10);
-    const isAr = state.lang === 'ar';
-    const currency = isAr ? 'ريال' : 'SAR';
-
-    if (priceBadge) priceBadge.textContent = `${price.toLocaleString()} ${currency}`;
-    if (downBadge) downBadge.textContent = `${downPercent}%`;
-
-    const downPaymentAmount = Math.round(price * (downPercent / 100));
-    const remainingAmount = price - downPaymentAmount;
-    // Off-plan installment over 36 months construction window
-    const monthlyInstallment = Math.round(remainingAmount / 36);
-    // Estimated luxury rental return in North Jeddah is ~9.5%
-    const estimatedAnnualReturn = Math.round(price * 0.095);
-
-    if (resDown) resDown.textContent = `${downPaymentAmount.toLocaleString()} ${currency}`;
-    if (resMonthly) resMonthly.textContent = `${monthlyInstallment.toLocaleString()} ${currency} / ${isAr ? 'شهرياً' : 'mo'}`;
-    if (resRoi) resRoi.textContent = `${estimatedAnnualReturn.toLocaleString()} ${currency} (${isAr ? 'عائد 9.5% سنوي' : '9.5% ROI'})`;
-  }
-
   if (priceSlider) priceSlider.addEventListener('input', updateCalculator);
   if (downSlider) downSlider.addEventListener('input', updateCalculator);
   updateCalculator();

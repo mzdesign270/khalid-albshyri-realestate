@@ -197,12 +197,22 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   transition: opacity 600ms var(--ease-spring), visibility 600ms ease;
+  animation: introLoaderAutoFade 0.7s 1.8s var(--ease-spring) forwards;
+  pointer-events: auto;
 }
 
 #intro-loader.fade-out {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+@keyframes introLoaderAutoFade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 .loader-logo-wrap {
