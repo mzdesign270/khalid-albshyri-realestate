@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#122A1E"/>
+      <stop offset="100%" stop-color="#08140E"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C9A24B"/>
+      <stop offset="50%" stop-color="#F3E5AB"/>
+      <stop offset="100%" stop-color="#C9A24B"/>
+    </linearGradient>
+    <linearGradient id="sofaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2D9CC"/>
+      <stop offset="100%" stop-color="#B8ADA0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#wallGrad)"/>
+
+  <!-- Floor Marble -->
+  <polygon points="0,420 800,420 800,600 0,600" fill="#0E1E16"/>
+  <line x1="0" y1="420" x2="800" y2="420" stroke="#C9A24B" stroke-width="2"/>
+  <!-- Marble vein lines -->
+  <path d="M120,440 Q300,520 450,590" stroke="#1F3D2C" stroke-width="1.5" fill="none"/>
+  <path d="M500,430 Q620,490 780,560" stroke="#1F3D2C" stroke-width="1.5" fill="none"/>
+
+  <!-- Panoramic Floor-to-Ceiling Window with Sea View -->
+  <rect x="80" y="60" width="450" height="340" rx="6" fill="#071911" stroke="url(#goldAccent)" stroke-width="2"/>
+  <!-- Sea horizon inside window -->
+  <rect x="82" y="240" width="446" height="158" fill="#0C2D21"/>
+  <circle cx="380" cy="230" r="40" fill="#E8D08A" opacity="0.3"/>
+  <line x1="82" y1="240" x2="528" y2="240" stroke="#E8D08A" stroke-opacity="0.4" stroke-width="1"/>
+  <!-- Jeddah skyline in window -->
+  <rect x="140" y="190" width="25" height="50" fill="#143A2B"/>
+  <rect x="175" y="160" width="30" height="80" fill="#1A4A37"/>
+  <rect x="220" y="200" width="20" height="40" fill="#143A2B"/>
+
+  <!-- Luxury Modern Sofa -->
+  <rect x="180" y="380" width="420" height="120" rx="20" fill="url(#sofaGrad)"/>
+  <rect x="160" y="420" width="60" height="70" rx="14" fill="#9E9488"/>
+  <rect x="560" y="420" width="60" height="70" rx="14" fill="#9E9488"/>
+  <!-- Cushions -->
+  <rect x="230" y="390" width="90" height="60" rx="10" fill="#0B5D3B"/>
+  <rect x="440" y="390" width="90" height="60" rx="10" fill="#C9A24B"/>
+
+  <!-- Marble & Gold Coffee Table -->
+  <ellipse cx="380" cy="510" rx="110" ry="35" fill="#163625" stroke="url(#goldAccent)" stroke-width="2.5"/>
+  <ellipse cx="380" cy="510" rx="95" ry="28" fill="#1F4733"/>
+  
+  <!-- Modern Chandelier Pendant -->
+  <line x1="650" y1="0" x2="650" y2="180" stroke="#C9A24B" stroke-width="2"/>
+  <circle cx="650" cy="200" r="30" fill="none" stroke="url(#goldAccent)" stroke-width="3"/>
+  <circle cx="650" cy="200" r="14" fill="#FFF8DC"/>
+  <circle cx="650" cy="200" r="45" fill="none" stroke="#E8D08A" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Floating Badge -->
+  <g transform="translate(540, 70)">
+    <rect width="200" height="60" rx="12" fill="#07110D" fill-opacity="0.9" stroke="#C9A24B" stroke-width="1"/>
+    <text x="15" y="26" fill="#A0AEC0" font-family="'Tajawal', sans-serif" font-size="12">تشطيب فاخر VIP</text>
+    <text x="15" y="48" fill="#E8D08A" font-family="'Tajawal', sans-serif" font-size="16" font-weight="bold">صالات بإطلالات بحرية</text>
+  </g>
+</svg>

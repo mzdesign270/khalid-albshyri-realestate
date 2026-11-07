@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="blueprintBg" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#071911"/>
+      <stop offset="100%" stop-color="#020906"/>
+    </linearGradient>
+    <linearGradient id="goldStroke" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C9A24B"/>
+      <stop offset="50%" stop-color="#F3E5AB"/>
+      <stop offset="100%" stop-color="#C9A24B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#blueprintBg)"/>
+
+  <!-- Blueprint Grid -->
+  <g stroke="#0E3322" stroke-width="1" opacity="0.4">
+    <path d="M0,50 L800,50 M0,100 L800,100 M0,150 L800,150 M0,200 L800,200 M0,250 L800,250 M0,300 L800,300 M0,350 L800,350 M0,400 L800,400 M0,450 L800,450 M0,500 L800,500 M0,550 L800,550" />
+    <path d="M50,0 L50,600 M100,0 L100,600 M150,0 L150,600 M200,0 L200,600 M250,0 L250,600 M300,0 L300,600 M350,0 L350,600 M400,0 L400,600 M450,0 L450,600 M500,0 L500,600 M550,0 L550,600 M600,0 L600,600 M650,0 L650,600 M700,0 L700,600 M750,0 L750,600" />
+  </g>
+
+  <!-- Architectural Floor Plan Layout: Luxury 3-Bedroom Unit -->
+  <!-- Outer Walls -->
+  <rect x="120" y="80" width="560" height="420" rx="8" stroke="url(#goldStroke)" stroke-width="4" fill="#0B2016" fill-opacity="0.8"/>
+  
+  <!-- Living Room / Salon -->
+  <rect x="130" y="90" width="300" height="230" stroke="#C9A24B" stroke-width="2" fill="#0E281C"/>
+  <text x="280" y="200" fill="#E8D08A" font-family="'Tajawal', sans-serif" font-size="18" font-weight="bold" text-anchor="middle">مجلس وصالة ضيوف واسعة</text>
+  <text x="280" y="225" fill="#8FA699" font-family="'Tajawal', sans-serif" font-size="14" text-anchor="middle">7.5m × 5.2m (39 م²)</text>
+
+  <!-- Master Bedroom Suite -->
+  <rect x="440" y="90" width="230" height="190" stroke="#C9A24B" stroke-width="2" fill="#0E281C"/>
+  <text x="555" y="180" fill="#E8D08A" font-family="'Tajawal', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">غرفة نوم ماستر + دريسنج</text>
+  <text x="555" y="205" fill="#8FA699" font-family="'Tajawal', sans-serif" font-size="13" text-anchor="middle">5.0m × 4.2m (21 م²)</text>
+
+  <!-- Kitchen & Dining -->
+  <rect x="130" y="330" width="200" height="160" stroke="#C9A24B" stroke-width="2" fill="#0E281C"/>
+  <text x="230" y="410" fill="#E8D08A" font-family="'Tajawal', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">مطبخ أمريكي مفتوح</text>
+  <text x="230" y="435" fill="#8FA699" font-family="'Tajawal', sans-serif" font-size="13" text-anchor="middle">4.2m × 3.5m</text>
+
+  <!-- Bedroom 2 & Bathroom -->
+  <rect x="340" y="330" width="190" height="160" stroke="#C9A24B" stroke-width="2" fill="#0E281C"/>
+  <text x="435" y="410" fill="#E8D08A" font-family="'Tajawal', sans-serif" font-size="16" font-weight="bold" text-anchor="middle">غرفة نوم ثانية</text>
+
+  <!-- Terrace / Balcony with Sea Breeze -->
+  <rect x="540" y="290" width="130" height="200" stroke="#E8D08A" stroke-width="2" stroke-dasharray="4 4" fill="#143D2B"/>
+  <text x="605" y="380" fill="#FFF" font-family="'Tajawal', sans-serif" font-size="15" font-weight="bold" text-anchor="middle">شرفة بانورامية</text>
+  <text x="605" y="405" fill="#E8D08A" font-family="'Tajawal', sans-serif" font-size="13" text-anchor="middle">مطلة على البحر</text>
+
+  <!-- Dimension badges -->
+  <g transform="translate(120, 520)">
+    <rect width="560" height="50" rx="8" fill="#07110D" stroke="#C9A24B" stroke-width="1"/>
+    <text x="30" y="32" fill="#E8D08A" font-family="'Tajawal', sans-serif" font-size="15" font-weight="bold">المساحة الإجمالية: 185 م²</text>
+    <text x="300" y="32" fill="#A0AEC0" font-family="'Tajawal', sans-serif" font-size="15">| 4 غرف + صالة + 3 دورات مياه + موقف خاص</text>
+  </g>
+</svg>

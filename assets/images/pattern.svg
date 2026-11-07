@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="goldLattice" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C9A24B" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#E8D08A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#C9A24B" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <!-- 8-Point Star and Arabesque Tessellation -->
+  <g stroke="url(#goldLattice)" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Center 8-point star -->
+    <polygon points="60,25 70,42 90,42 75,55 82,75 60,65 38,75 45,55 30,42 50,42" />
+    <circle cx="60" cy="60" r="32" stroke-dasharray="2 4"/>
+    
+    <!-- Outer framing diamonds and intersecting octagonal bands -->
+    <rect x="25" y="25" width="70" height="70" transform="rotate(45 60 60)" />
+    <rect x="35" y="35" width="50" height="50" />
+    
+    <!-- Corner stars meeting seamlessly on repeat -->
+    <path d="M0,0 L15,15 M120,0 L105,15 M0,120 L15,105 M120,120 L105,105" />
+    <path d="M60,0 L60,18 M60,120 L60,102 M0,60 L18,60 M120,60 L102,60" />
+    <circle cx="60" cy="60" r="8" fill="#C9A24B" fill-opacity="0.15" />
+    <circle cx="0" cy="0" r="16" />
+    <circle cx="120" cy="0" r="16" />
+    <circle cx="0" cy="120" r="16" />
+    <circle cx="120" cy="120" r="16" />
+  </g>
+</svg>

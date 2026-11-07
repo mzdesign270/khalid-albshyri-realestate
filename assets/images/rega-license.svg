@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380" fill="none">
+  <defs>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E2D1E"/>
+      <stop offset="50%" stop-color="#091B13"/>
+      <stop offset="100%" stop-color="#050F0A"/>
+    </linearGradient>
+    <linearGradient id="goldBorder" x1="0" y1="0" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E8D08A"/>
+      <stop offset="50%" stop-color="#C9A24B"/>
+      <stop offset="100%" stop-color="#8E6B22"/>
+    </linearGradient>
+    <pattern id="cardPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M20,0 L40,20 L20,40 L0,20 Z" fill="none" stroke="#C9A24B" stroke-width="0.5" stroke-opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <!-- Card Base with Gold Rim -->
+  <rect width="600" height="380" rx="20" fill="url(#cardBg)"/>
+  <rect width="600" height="380" rx="20" fill="url(#cardPattern)"/>
+  <rect x="2" y="2" width="596" height="376" rx="18" stroke="url(#goldBorder)" stroke-width="2" fill="none"/>
+
+  <!-- Official Authority Header -->
+  <g transform="translate(40, 35)">
+    <!-- Palm & Swords Emblem -->
+    <circle cx="25" cy="25" r="22" fill="#0B5D3B" stroke="#E8D08A" stroke-width="1.5"/>
+    <path d="M25,12 L25,32 M20,18 Q25,15 30,18 M18,24 Q25,20 32,24" stroke="#E8D08A" stroke-width="2" stroke-linecap="round"/>
+    
+    <text x="60" y="20" fill="#FFFFFF" font-family="'Tajawal', sans-serif" font-size="16" font-weight="bold">الهيئة العامة للعقار</text>
+    <text x="60" y="38" fill="#A0AEC0" font-family="'Tajawal', sans-serif" font-size="12">Real Estate General Authority | المملكة العربية السعودية</text>
+  </g>
+
+  <!-- Verified Hologram Chip -->
+  <g transform="translate(480, 35)">
+    <rect width="75" height="50" rx="8" fill="#243F30" stroke="#E8D08A" stroke-width="1.5"/>
+    <rect x="8" y="10" width="59" height="30" rx="4" fill="none" stroke="#C9A24B" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="37" y="29" fill="#E8D08A" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">REGA FAL</text>
+    <text x="37" y="38" fill="#FFF" font-family="sans-serif" font-size="7" text-anchor="middle">VERIFIED</text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="40" y1="110" x2="560" y2="110" stroke="#C9A24B" stroke-opacity="0.3" stroke-width="1"/>
+
+  <!-- Card Details in Arabic -->
+  <g transform="translate(40, 135)" font-family="'Tajawal', sans-serif">
+    <!-- Licensee Name -->
+    <text x="0" y="15" fill="#8FA699" font-size="13">اسم الممارس / الوسيط العقاري:</text>
+    <text x="0" y="42" fill="#FFFFFF" font-size="20" font-weight="bold">خالد بن علي البشيري</text>
+
+    <!-- License Number -->
+    <text x="0" y="80" fill="#8FA699" font-size="13">رقم رخصة فال العقارية (تجريبي):</text>
+    <text x="0" y="105" fill="#E8D08A" font-size="22" font-weight="bold" letter-spacing="2">7100000000</text>
+
+    <!-- Classification & Region -->
+    <text x="0" y="145" fill="#8FA699" font-size="13">نوع الرخصة والأنشطة:</text>
+    <text x="0" y="170" fill="#E2E8F0" font-size="15">وساطة وتسويق عقاري | إدارة أملاك | استشارات</text>
+
+    <!-- City & Validity -->
+    <text x="340" y="80" fill="#8FA699" font-size="13">المدينة والمنطقة:</text>
+    <text x="340" y="105" fill="#FFFFFF" font-size="17" font-weight="bold">جدة، منطقة مكة المكرمة</text>
+
+    <text x="340" y="145" fill="#8FA699" font-size="13">حالة الرخصة:</text>
+    <text x="340" y="170" fill="#4ADE80" font-size="16" font-weight="bold">● سارية ومعتمدة رسمياً</text>
+  </g>
+
+  <!-- Bottom Gold Seal -->
+  <rect x="0" y="340" width="600" height="40" rx="0 0 20 20" fill="#0B2016"/>
+  <text x="300" y="365" fill="#C9A24B" font-family="'Tajawal', sans-serif" font-size="12" text-anchor="middle">
+    موثق عبر منصة الهيئة العامة للعقار (فال) | ترخيص رقم 7100000000
+  </text>
+</svg>

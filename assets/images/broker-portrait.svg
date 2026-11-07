@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="720" viewBox="0 0 600 720" fill="none">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#143e2b"/>
+      <stop offset="60%" stop-color="#0b2419"/>
+      <stop offset="100%" stop-color="#07110d"/>
+    </radialGradient>
+    <linearGradient id="goldBorder" x1="0" y1="0" x2="600" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E8D08A"/>
+      <stop offset="50%" stop-color="#C9A24B"/>
+      <stop offset="100%" stop-color="#8E6B22"/>
+    </linearGradient>
+    <linearGradient id="shemaghPattern" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f5f7"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="720" rx="24" fill="url(#bgGlow)"/>
+  <rect width="596" height="716" x="2" y="2" rx="22" stroke="url(#goldBorder)" stroke-width="2" fill="none" opacity="0.6"/>
+
+  <!-- Subtle Geometric Lattice Backdrop -->
+  <g opacity="0.08" stroke="#E8D08A" stroke-width="1">
+    <circle cx="300" cy="280" r="140" stroke-dasharray="4 8"/>
+    <circle cx="300" cy="280" r="190" stroke-dasharray="2 6"/>
+    <polygon points="300,100 350,220 470,220 375,290 410,410 300,340 190,410 225,290 130,220 250,220" fill="none"/>
+  </g>
+
+  <!-- Silhouette & Portrait Artwork -->
+  <g filter="url(#softShadow)" transform="translate(0, 30)">
+    <!-- Shoulders / Bisht (Royal Saudi cloak with gold Zari border) -->
+    <path d="M120,680 C130,520 180,470 240,450 L300,500 L360,450 C420,470 470,520 480,680 Z" fill="#0B1C14"/>
+    
+    <!-- White Thobe underneath -->
+    <path d="M260,455 L300,500 L340,455 L335,680 L265,680 Z" fill="#FFFFFF"/>
+    <line x1="300" y1="500" x2="300" y2="680" stroke="#E2E8F0" stroke-width="2"/>
+    <!-- Collar buttons -->
+    <circle cx="300" cy="530" r="3" fill="#C9A24B"/>
+    <circle cx="300" cy="565" r="3" fill="#C9A24B"/>
+    <circle cx="300" cy="600" r="3" fill="#C9A24B"/>
+
+    <!-- Bisht Gold Trim (Qasab / Zari embroidery) -->
+    <path d="M240,450 L270,680" stroke="#E8D08A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M360,450 L330,680" stroke="#E8D08A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M245,450 L275,680" stroke="#C9A24B" stroke-width="2"/>
+    <path d="M355,450 L325,680" stroke="#C9A24B" stroke-width="2"/>
+
+    <!-- Neck & Face -->
+    <path d="M275,380 C275,440 325,440 325,380 Z" fill="#D7A77B"/>
+    <ellipse cx="300" cy="330" rx="65" ry="85" fill="#E2B488"/>
+    <!-- Groomed Beard -->
+    <path d="M255,330 C255,405 345,405 345,330 C335,370 265,370 255,330 Z" fill="#1C1815"/>
+    <path d="M280,355 C290,360 310,360 320,355 C310,368 290,368 280,355 Z" fill="#100D0B"/>
+    <path d="M285,340 Q300,345 315,340" stroke="#100D0B" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Eyes and Eyebrows -->
+    <path d="M265,300 Q280,295 292,302" stroke="#100D0B" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M308,302 Q320,295 335,300" stroke="#100D0B" stroke-width="3.5" stroke-linecap="round"/>
+    <ellipse cx="280" cy="312" rx="6" ry="4" fill="#2B1A0E"/>
+    <ellipse cx="320" cy="312" rx="6" ry="4" fill="#2B1A0E"/>
+    <path d="M297,315 L303,332 L297,335" stroke="#BF9068" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- White Ghutra / Shemagh -->
+    <path d="M230,265 C230,170 370,170 370,265 C370,330 385,420 395,490 C360,480 340,430 335,360 C320,370 280,370 265,360 C260,430 240,480 205,490 C215,420 230,330 230,265 Z" fill="#FFFFFF"/>
+    <!-- Subtle Ghutra shadows -->
+    <path d="M230,265 C230,350 215,430 205,490 C220,460 238,400 240,320 Z" fill="#E5E7EB" opacity="0.6"/>
+    <path d="M370,265 C370,350 385,430 395,490 C380,460 362,400 360,320 Z" fill="#E5E7EB" opacity="0.6"/>
+
+    <!-- Black Egal (Double Ring with Gold Details) -->
+    <ellipse cx="300" cy="225" rx="72" ry="16" stroke="#121212" stroke-width="12" fill="none"/>
+    <ellipse cx="300" cy="216" rx="70" ry="15" stroke="#181818" stroke-width="11" fill="none"/>
+    <ellipse cx="300" cy="220" rx="71" ry="15" stroke="#333333" stroke-width="1.5" fill="none"/>
+    <line x1="300" y1="235" x2="300" y2="280" stroke="#121212" stroke-width="3"/>
+    <circle cx="300" cy="282" r="3" fill="#C9A24B"/>
+  </g>
+
+  <!-- Luxury Monogram Badge at Bottom -->
+  <g transform="translate(300, 640)">
+    <rect x="-140" y="-24" width="280" height="48" rx="24" fill="#07110D" fill-opacity="0.9" stroke="url(#goldBorder)" stroke-width="1.5"/>
+    <text x="0" y="7" fill="#E8D08A" font-family="'Tajawal', sans-serif" font-weight="bold" font-size="16" text-anchor="middle" letter-spacing="1">
+      خالد البشيري | وسيط عقاري معتمد
+    </text>
+  </g>
+</svg>
