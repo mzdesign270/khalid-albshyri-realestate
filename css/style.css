@@ -408,15 +408,15 @@ button, input, select, textarea {
   font-weight: 600;
 }
 
-/* --- SECTION 1: HERO (Daytime / Nighttime Architectural Experience) --- */
+/* --- SECTION 1: HERO (Cinematic Open Canvas, Video Ready) --- */
 .hero-section {
   position: relative;
-  min-height: 85vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 125px;
-  padding-bottom: 85px;
+  padding-top: 130px;
+  padding-bottom: 90px;
   background: var(--bg-main);
   overflow: hidden;
 }
@@ -428,17 +428,31 @@ button, input, select, textarea {
   overflow: hidden;
 }
 
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-bg-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   transition: opacity 300ms ease;
+  z-index: 0;
 }
 
 .hero-img-dark {
   display: block;
-  filter: brightness(0.42) contrast(1.1);
+  filter: brightness(0.48) contrast(1.1);
 }
 
 .hero-img-light {
@@ -451,7 +465,7 @@ button, input, select, textarea {
 
 [data-theme="light"] .hero-img-light {
   display: block;
-  filter: brightness(0.96) contrast(1.05) saturate(1.05);
+  filter: brightness(0.9) contrast(1.05);
   opacity: 1;
 }
 
@@ -459,65 +473,56 @@ button, input, select, textarea {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, 
-              rgba(20, 21, 24, 0.55) 0%, 
-              rgba(20, 21, 24, 0.72) 50%, 
+              rgba(14, 16, 20, 0.45) 0%, 
+              rgba(14, 16, 20, 0.65) 55%, 
               var(--bg-main) 100%);
   pointer-events: none;
+  z-index: 1;
 }
 
 [data-theme="light"] .hero-overlay {
   background: linear-gradient(180deg, 
-              rgba(251, 249, 245, 0.25) 0%, 
-              rgba(251, 249, 245, 0.45) 55%, 
+              rgba(251, 249, 245, 0.5) 0%, 
+              rgba(251, 249, 245, 0.75) 60%, 
               var(--bg-main) 100%);
 }
 
-.hero-card {
-  max-width: 860px;
+.hero-content {
+  max-width: 900px;
   margin-inline: auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
-  padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 48px);
-  border-radius: 28px;
-  background: rgba(20, 21, 24, 0.78);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-  transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
-}
-
-[data-theme="light"] .hero-card {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(231, 226, 218, 0.95);
-  box-shadow: 0 20px 50px rgba(28, 25, 23, 0.08);
 }
 
 .hero-headline {
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(2.3rem, 5.2vw, 4.2rem);
   font-weight: 800;
   line-height: 1.25;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  color: #FFFFFF;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.65);
 }
 
 [data-theme="light"] .hero-headline {
-  color: #1C1917;
+  color: #141518;
+  text-shadow: 0 1px 20px rgba(255, 255, 255, 0.9), 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .hero-subheadline {
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  color: var(--text-secondary);
-  line-height: 1.65;
-  max-width: 720px;
+  font-size: clamp(1.1rem, 2.1vw, 1.35rem);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+  max-width: 760px;
   margin-inline: auto;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
 }
 
 [data-theme="light"] .hero-subheadline {
-  color: #57534E;
+  color: #292524;
+  font-weight: 500;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.9);
 }
 
 .hero-cta-group {
