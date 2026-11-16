@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = Number(element.dataset.count);
     const prefix = element.dataset.prefix || '';
     const suffix = element.dataset.suffix || '';
-    const duration = 1600;
+    const duration = 2600;
     const startTime = performance.now();
 
     const renderFrame = (now) => {
@@ -301,11 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(renderFrame);
   };
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    statNumbers.forEach((element) => {
-      element.textContent = `${element.dataset.prefix || ''}${element.dataset.count}${element.dataset.suffix || ''}`;
-    });
-  } else if ('IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window) {
     const statObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -313,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
     statNumbers.forEach((element) => statObserver.observe(element));
   } else {
