@@ -1115,6 +1115,48 @@ button, input, select, textarea {
   gap: 10px;
 }
 
+.social-icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+}
+
+.social-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.social-icon-instagram {
+  background: linear-gradient(135deg, #833AB4, #E1306C 55%, #FCAF45);
+}
+
+.social-icon-snapchat {
+  background: #FFFC00;
+}
+
+.social-icon-facebook {
+  background: #1877F2;
+}
+
+.social-icon-tiktok {
+  background: #111111;
+}
+
+.social-icon-linkedin {
+  background: #0A66C2;
+}
+
 .footer-contact-item {
   display: flex;
   align-items: center;
