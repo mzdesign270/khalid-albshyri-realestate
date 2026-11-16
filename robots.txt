@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://khalid-albshyri-realestate.pages.dev/sitemap.xml
