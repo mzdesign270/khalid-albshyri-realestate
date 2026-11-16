@@ -280,6 +280,46 @@ document.addEventListener('DOMContentLoaded', () => {
   applyTheme(state.theme);
   applyLanguage(state.lang);
 
+  // --- Animated Statistics ---
+  const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+  const startStatCountUp = (element) => {
+    const target = Number(element.dataset.count);
+    const prefix = element.dataset.prefix || '';
+    const suffix = element.dataset.suffix || '';
+    const duration = 1600;
+    const startTime = performance.now();
+
+    const renderFrame = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 4);
+      const currentValue = Math.round(target * easedProgress);
+      element.textContent = `${prefix}${currentValue}${suffix}`;
+
+      if (progress < 1) requestAnimationFrame(renderFrame);
+    };
+
+    requestAnimationFrame(renderFrame);
+  };
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    statNumbers.forEach((element) => {
+      element.textContent = `${element.dataset.prefix || ''}${element.dataset.count}${element.dataset.suffix || ''}`;
+    });
+  } else if ('IntersectionObserver' in window) {
+    const statObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startStatCountUp(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach((element) => statObserver.observe(element));
+  } else {
+    statNumbers.forEach(startStatCountUp);
+  }
+
   // --- Scroll Progress Bar ---
   const progressBar = document.getElementById('scroll-progress');
   window.addEventListener('scroll', () => {
