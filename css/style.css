@@ -455,18 +455,8 @@ button, input, select, textarea {
   filter: brightness(0.72) contrast(1.05);
 }
 
-.hero-img-light {
-  display: none;
-}
-
 [data-theme="light"] .hero-img-dark {
-  display: none;
-}
-
-[data-theme="light"] .hero-img-light {
-  display: block;
-  filter: brightness(0.9) contrast(1.05);
-  opacity: 1;
+  filter: brightness(0.92) contrast(1.02);
 }
 
 .hero-overlay {
