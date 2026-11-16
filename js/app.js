@@ -286,12 +286,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = Number(element.dataset.count);
     const prefix = element.dataset.prefix || '';
     const suffix = element.dataset.suffix || '';
-    const duration = 2600;
+    const duration = 3500;
     const startTime = performance.now();
 
     const renderFrame = (now) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      const easedProgress = 1 - Math.pow(1 - progress, 4);
+      const easedProgress = -(Math.cos(Math.PI * progress) - 1) / 2;
       const currentValue = Math.round(target * easedProgress);
       element.textContent = `${prefix}${currentValue}${suffix}`;
 
@@ -302,16 +302,18 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if ('IntersectionObserver' in window) {
+    const statsSection = document.getElementById('stats-bar');
     const statObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          startStatCountUp(entry.target);
-          observer.unobserve(entry.target);
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+          statNumbers.forEach(startStatCountUp);
+          observer.disconnect();
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: [0, 0.6] });
 
-    statNumbers.forEach((element) => statObserver.observe(element));
+    if (statsSection) statObserver.observe(statsSection);
+    else statNumbers.forEach(startStatCountUp);
   } else {
     statNumbers.forEach(startStatCountUp);
   }
