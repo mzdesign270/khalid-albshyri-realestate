@@ -272,6 +272,15 @@ button, input, select, textarea {
   background: rgba(194, 94, 62, 0.08);
 }
 
+.brand-photo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  object-fit: cover;
+  border: 1.5px solid var(--accent-terracotta);
+  border-radius: 50%;
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
